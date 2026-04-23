@@ -15,7 +15,7 @@ function LawyerProfile() {
   useEffect(() => {
     const fetchLawyer = async () => {
       try {
-        const res = await axios.get(`http://localhost:5050/api/lawyer/${id}`);
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/lawyer/${id}`);
         setLawyer(res.data);
       } catch (err) {
         setError("Failed to load lawyer profile");

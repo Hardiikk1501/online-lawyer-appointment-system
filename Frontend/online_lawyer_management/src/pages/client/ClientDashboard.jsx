@@ -16,7 +16,8 @@ const [view, setView] = useState("profile");
 
  const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  const API = "http://localhost:5050/api";
+   const ur=import.meta.env.VITE_APP_API_URL;
+  const API = `${ur}/api`;
 
   useEffect(() => {
     fetchData();

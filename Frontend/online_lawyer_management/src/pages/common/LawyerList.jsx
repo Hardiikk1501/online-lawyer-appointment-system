@@ -24,7 +24,7 @@ function LawyerList() {
         setLoading(true);
 
         const res = await axios.get(
-          `http://localhost:5050/api/lawyers?specialization=${specialization}`
+          `${import.meta.env.VITE_API_URL}/api/lawyers?specialization=${specialization}`
         );
 
         setLawyers(res.data);

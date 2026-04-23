@@ -34,7 +34,7 @@ const [editMode, setEditMode] = useState(false);
   });
 
   const token = localStorage.getItem("token");
-  const API = "http://localhost:5050/api/lawyer";
+  const API = `${import.meta.env.VITE_API_URL}/api/lawyer`;
 
   useEffect(() => {
     fetchDashboard();

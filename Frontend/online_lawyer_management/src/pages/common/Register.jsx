@@ -92,8 +92,8 @@ if (!formData.password) {
     try {
       const url =
         role === "Client"
-          ? "http://localhost:5050/api/auth/register/client"
-          : "http://localhost:5050/api/auth/register/lawyer";
+          ? `${import.meta.env.VITE_API_URL}/api/auth/register/client`
+          : `${import.meta.env.VITE_API_URL}/api/auth/register/lawyer`;
 
      // await axios.post(url, { ...formData, role });
       const data = new FormData();

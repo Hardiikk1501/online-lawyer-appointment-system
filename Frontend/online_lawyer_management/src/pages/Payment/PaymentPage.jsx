@@ -11,7 +11,7 @@ function PaymentPage() {
   const [appointment, setAppointment] = useState(null);
 
   const token = localStorage.getItem("token");
-  const API = "http://localhost:5050/api";
+  const API = `${import.meta.env.VITE_API_URL}/api`;
 
   
   useEffect(() => {

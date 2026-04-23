@@ -16,7 +16,7 @@ function ForgotPassword() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
-  const API = "http://localhost:5050/api/auth";
+  const API = `${import.meta.env.VITE_API_URL}/api/auth`;
 
   // STEP 1 - SEND OTP
   const handleSendOTP = async (e) => {

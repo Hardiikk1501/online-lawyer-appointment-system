@@ -29,7 +29,7 @@ const AdminRegister = () => {
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:5050/api/auth/register/admin",
+        `${import.meta.env.VITE_API_URL}/api/auth/register/admin`,
         form
       );
 

@@ -38,7 +38,7 @@ function Report() {
       setError("");
 
       const res = await axios.get(
-        `http://localhost:5050/api/admin/report?filter=${filter}`
+        `${import.meta.env.VITE_API_URL}/api/admin/report?filter=${filter}`
       );
       
 
@@ -69,11 +69,11 @@ function Report() {
 
   // 📥 EXPORT
   const exportCSV = () => {
-    window.open("http://localhost:5050/api/admin/export/csv");
+    window.open(`${import.meta.env.VITE_API_URL}/api/admin/export/csv`);
   };
 
   const exportPDF = () => {
-    window.open("http://localhost:5050/api/admin/export/pdf");
+    window.open(`${import.meta.env.VITE_API_URL}/api/admin/export/pdf`);
   };
 
   return (

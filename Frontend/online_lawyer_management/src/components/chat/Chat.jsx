@@ -31,14 +31,14 @@ function ChatPage() {
   const bottomRef = useRef(null);
 
   useEffect(() => {
-    socketRef.current = io("http://localhost:5050");
+    socketRef.current = io(`${import.meta.env.VITE_API_URL}`);
 
     socketRef.current.emit("joinRoom", appointmentId);
 
     const fetchMessages = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5050/api/messages/${appointmentId}`
+          `${import.meta.env.VITE_API_URL}/api/messages/${appointmentId}`
         );
         setMessages(res.data);
       } catch (error) {
