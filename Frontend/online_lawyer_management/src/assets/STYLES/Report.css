@@ -1,0 +1,33 @@
+.filters {
+  margin-bottom: 20px;
+}
+
+.filters button {
+  margin-right: 10px;
+  padding: 8px 15px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chart-box {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.export-btns {
+  margin-top: 20px;
+}
+
+.export-btns button {
+  margin-right: 10px;
+  padding: 10px 15px;
+  border: none;
+  background: green;
+  color: white;
+  border-radius: 5px;
+}

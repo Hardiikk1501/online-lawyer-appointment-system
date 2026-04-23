@@ -1,0 +1,324 @@
+/* ===== LAYOUT ===== */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #f1f5f9;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 220px;
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+}
+
+.head {
+  margin-bottom: 30px;
+
+  
+}
+
+.menu-item {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background: #1e293b;
+}
+
+/* ===== MAIN ===== */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* ===== PROFILE ===== */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  background: rgb(202, 232, 241);
+  padding: 20px;
+
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+
+
+/* TITLE */
+.section-title {
+  margin-bottom: 15px;
+}
+
+/* ===== APPOINTMENT CARD ===== */
+.appointments {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.appointment-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.appointment-card:hover {
+  transform: translateY(-3px);
+}
+
+/* LEFT */
+.appointment-card .left h4 {
+  margin: 0;
+}
+
+.appointment-card .left p {
+  font-size: 14px;
+  color: #666;
+}
+
+.appointment-card .left span {
+  font-size: 13px;
+  color: #888;
+}
+
+/* RIGHT */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* STATUS */
+.status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.status.pending {
+  background: #facc15;
+}
+
+.status.approved {
+  background: #60a5fa;
+}
+
+.status.paid {
+  background: #22c55e;
+  color: white;
+}
+
+/* ACTION */
+.pay-btn {
+  padding: 6px 12px;
+  border: none;
+  background: #16a34a;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.waiting {
+  color: orange;
+}
+
+.done {
+  color: green;
+}
+
+/* EMPTY */
+.empty {
+  text-align: center;
+  color: #888;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+/* GRID */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* CARD */
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+  border-left: 5px solid transparent;
+}
+
+/* HOVER */
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ACTIVE */
+.stat-card.active {
+  border-left: 5px solid #3b82f6;
+  background: #eff6ff;
+}
+
+/* NUMBER */
+.stat-card h3 {
+  font-size: 26px;
+  margin: 0;
+  color: #1e293b;
+}
+
+/* LABEL */
+.stat-card p {
+  margin-top: 5px;
+  color: #64748b;
+}
+
+/* COLORS (Optional) */
+.stat-card:nth-child(1) { border-left-color: #6366f1; } /* All */
+.stat-card:nth-child(2) { border-left-color: #f59e0b; } /* Pending */
+.stat-card:nth-child(3) { border-left-color: #3b82f6; } /* Approved */
+.stat-card:nth-child(4) { border-left-color: #22c55e; } /* Paid */
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.icon {
+  margin-right: 8px;
+  color: #3b82f6;
+  font-size: 14px;
+}
+
+/* Align text nicely */
+.profile-info p,
+.profile-info span {
+  display: flex;
+  align-items: center;
+  color: #475569;
+}
+.cancel-btn {
+  padding: 6px 12px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #dc2626;
+}
+.chat-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+
+  background: linear-gradient(135deg, #00c853, #009624);
+  color: #fff;
+
+  border: none;
+  border-radius: 999px; /* pill shape */
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 12px rgba(0, 200, 83, 0.3);
+}
+
+/* Hover effect */
+.chat-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: linear-gradient(135deg, #00e676, #00c853);
+  box-shadow: 0 6px 18px rgba(0, 230, 118, 0.4);
+}
+
+/* Click effect */
+.chat-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 8px rgba(0, 200, 83, 0.2);
+}
+
+/* Icon styling */
+.chat-icon {
+  font-size: 16px;
+}
+
+/* Optional: disabled */
+.chat-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.profile2-img {
+  width: 150px;
+  height: 200px;
+  border-radius: 20%; /* circle */
+  object-fit: cover;
+  border: 2px solid #3b82f6;
+}
+.profile2-img:hover{
+   transform: scale(1.2);
+  box-shadow: 0 8px 20px rgba(216, 40, 40, 0.2);
+
+}
+/* ===== AVATAR ===== */
+.avatar3 {
+  width: 90px;
+  height: 100px;
+  border-radius: 30%;
+  background: #38bdf8;
+  border :2px solid #0b2144;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.avatar3:hover {
+  transform: scale(1.2);
+  box-shadow: 0 8px 20px rgba(216, 40, 40, 0.2);
+}
+
+.avatar3-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}

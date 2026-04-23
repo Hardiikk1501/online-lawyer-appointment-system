@@ -1,0 +1,88 @@
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Container ===== */
+.notfound-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  text-align: center;
+  padding: 20px;
+}
+
+/* ===== Content Card ===== */
+.notfound-content {
+  color: #fff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ===== 404 Text ===== */
+.notfound-content h1 {
+  font-size: 120px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff9800, #ff5722);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  margin-bottom: 10px;
+}
+
+/* ===== Subtitle ===== */
+.notfound-content h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+/* ===== Paragraph ===== */
+.notfound-content p {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+/* ===== Button ===== */
+.notfound-content button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background: #ff9800;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.notfound-content button:hover {
+  background: #e68900;
+  transform: translateY(-3px);
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .notfound-content h1 {
+    font-size: 80px;
+  }
+
+  .notfound-content h2 {
+    font-size: 22px;
+  }
+}
