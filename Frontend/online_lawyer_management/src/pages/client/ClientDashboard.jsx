@@ -35,9 +35,8 @@ const [view, setView] = useState("profile");
       ]);
 
       setClient(profileRes.data);
-      //setAppointments(appointmentRes.data);
-       const data = appointmentRes.data;
-    setAppointments(Array.isArray(data) ? data : data.appointments || []);
+      setAppointments(appointmentRes.data);
+  
 
     } catch (err) {
       console.error("Error:", err);
