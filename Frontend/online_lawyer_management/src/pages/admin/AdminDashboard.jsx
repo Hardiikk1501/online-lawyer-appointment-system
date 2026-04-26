@@ -45,7 +45,7 @@ function AdminDashboard() {
 
   const fetchDashboardData = async () => {
     try {
-      const res = await API.get("/admin/dashboard", {
+      const res = await API.get("/api/admin/dashboard", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStats(res.data);
@@ -61,7 +61,7 @@ function AdminDashboard() {
       setDataLoading(true);
       setActiveType("clients");
 
-      const res = await API.get("/admin/clients", {
+      const res = await API.get("/api/admin/clients", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -78,7 +78,7 @@ function AdminDashboard() {
       setDataLoading(true);
       setActiveType("lawyers");
 
-      const res = await API.get("/admin/lawyers", {
+      const res = await API.get("/api/admin/lawyers", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -94,7 +94,7 @@ function AdminDashboard() {
     try {
       setDataLoading(true);
 
-      const res = await API.get("/admin/appointments", {
+      const res = await API.get("/api/admin/appointments", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -112,7 +112,7 @@ function AdminDashboard() {
   // 🔥 NEW: APPROVE LAWYER
   const approveLawyer = async (id) => {
     try {
-      await API.post(`/admin/lawyers/${id}/approve`, {}, {
+      await API.post(`/api/admin/lawyers/${id}/approve`, {}, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -131,7 +131,7 @@ function AdminDashboard() {
   // 🔥 NEW: REJECT LAWYER
   const rejectLawyer = async (id) => {
     try {
-      await API.post(`/admin/lawyers/${id}/reject`, {}, {
+      await API.post(`/api/admin/lawyers/${id}/reject`, {}, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -159,7 +159,7 @@ function AdminDashboard() {
     if (!result.isConfirmed) return;
 
     try {
-      await API.delete(`/admin/${activeType}/${id}`, {
+      await API.delete(`/api/admin/${activeType}/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -188,7 +188,7 @@ function AdminDashboard() {
     if (!result.isConfirmed) return;
 
     try {
-      await API.delete(`/admin/appointments/${id}`, {
+      await API.delete(`/api/admin/appointments/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

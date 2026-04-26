@@ -57,7 +57,7 @@ function BookAppointment() {
       try {
 
         const res = await axios.get(
-          `${API}/appointments/booked/${lawyerId}?date=${date}`,
+          `${API}/api/appointments/booked/${lawyerId}?date=${date}`,
           {
             headers: { Authorization: `Bearer ${token}` }
           }
@@ -84,7 +84,7 @@ function BookAppointment() {
     try {
 
       await axios.post(
-        `${API}/appointments/lock-slot`,
+        `${API}/api/appointments/lock-slot`,
         {
           lawyerId : lawyerId,
           date : date,
@@ -122,7 +122,7 @@ function BookAppointment() {
       setLoading(true);
 
       await axios.post(
-        `${API}/create-appointment`,
+        `${API}/api/create-appointment`,
         {
           lawyerId,
           appointmentDate: date,
