@@ -16,8 +16,8 @@ const [view, setView] = useState("profile");
 
  const navigate = useNavigate();
   const token = localStorage.getItem("token");
-   const ur=import.meta.env.VITE_APP_API_URL;
-  const API = `${ur}/api`;
+   
+  const API = import.meta.env.VITE_APP_API_URL;
 
   useEffect(() => {
     fetchData();
@@ -26,10 +26,10 @@ const [view, setView] = useState("profile");
   const fetchData = async () => {
     try {
       const [profileRes, appointmentRes] = await Promise.all([
-        axios.get(`${API}/profile`, {
+        axios.get(`${API}/api/profile`, {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        axios.get(`${API}/appointments`, {
+        axios.get(`${API}/api/appointments`, {
           headers: { Authorization: `Bearer ${token}` },
         }),
       ]);
@@ -48,7 +48,7 @@ const [view, setView] = useState("profile");
   const handleCancel = async (id) => {
   try {
     await axios.delete(
-  `${API}/appointments/cancel/${id}`,
+  `${API}/api/appointments/cancel/${id}`,
   {
     headers: { Authorization: `Bearer ${token}` },
   }
